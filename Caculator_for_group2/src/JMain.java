@@ -20,12 +20,13 @@ public class JMain extends JFrame {
 	private JTextField txtCasiocaculator;
 	/**
 	 * Bien du tinh.
+	 * 
 	 */
 	//
-//	boolean kt = true;
-//	boolean dau = false;
-//	double val = 0;
-//	String Pheptinh = "";
+	boolean kt = true;
+	boolean dau = false;
+	double val = 0;
+	String Pheptinh = "";
 
 	/**
 	 * Launch the application.
@@ -33,7 +34,7 @@ public class JMain extends JFrame {
 	public static void main(String[] args) {
 		
 	}
-
+		
 	/**
 	 * Create the frame.
 	 */
@@ -44,7 +45,7 @@ public class JMain extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
