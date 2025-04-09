@@ -126,6 +126,15 @@ public class JMain extends JFrame {
 		btnButton_note.setBackground(Color.GRAY);
 		btnButton_note.setBounds(130, 430, 70, 70);
 		contentPane.add(btnButton_note);
+		
+		btnButton_note.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String currentText = txtKQ.getText();
+				if (!currentText.contains(".")) {
+					txtKQ.setText(currentText + ".");
+				}
+			}
+		});
 
 		/**
 		 * Khu vuc code nut < . >.
@@ -137,6 +146,15 @@ public class JMain extends JFrame {
 		btnButton_Add.setBackground(Color.GRAY);
 		btnButton_Add.setBounds(354, 187, 70, 70);
 		contentPane.add(btnButton_Add);
+		
+		btnButton_Add.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val = Double.parseDouble(txtKQ.getText());
+				Pheptinh = "+";
+				txtKQ.setText(txtKQ.getText() + " " + Pheptinh + " ");
+
+			}
+		});
 
 		/**
 		 * Khu vuc code nut + <+>.
@@ -148,6 +166,15 @@ public class JMain extends JFrame {
 		btnButton_Sub.setBackground(Color.GRAY);
 		btnButton_Sub.setBounds(354, 268, 70, 70);
 		contentPane.add(btnButton_Sub);
+		
+		btnButton_Sub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val = Double.parseDouble(txtKQ.getText());
+				Pheptinh = "-";
+				txtKQ.setText(txtKQ.getText() + " " + Pheptinh + " ");
+
+			}
+		});
 
 		/**
 		 * Khu vuc code nut tru<->
@@ -159,6 +186,15 @@ public class JMain extends JFrame {
 		btnButton_Multi.setBackground(Color.GRAY);
 		btnButton_Multi.setBounds(354, 349, 70, 70);
 		contentPane.add(btnButton_Multi);
+		
+		btnButton_Multi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val = Double.parseDouble(txtKQ.getText());
+				Pheptinh = "x";
+				txtKQ.setText(txtKQ.getText() + " " + Pheptinh + " ");
+
+			}
+		});
 
 		/**
 		 * Khu vuv code nut nhan <x>.
@@ -170,6 +206,15 @@ public class JMain extends JFrame {
 		btnButton_Div.setBackground(Color.GRAY);
 		btnButton_Div.setBounds(354, 430, 70, 70);
 		contentPane.add(btnButton_Div);
+		
+		btnButton_Div.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val = Double.parseDouble(txtKQ.getText());
+				Pheptinh = "/";
+				txtKQ.setText(txtKQ.getText() + " " + Pheptinh + " ");
+
+			}
+		});
 
 		/**
 		 * Khu vuc code nut chia</>.
