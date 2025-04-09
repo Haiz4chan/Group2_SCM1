@@ -191,10 +191,68 @@ public class JMain extends JFrame {
 		btnButton_Equals.setFont(new Font("Tahoma", Font.BOLD, 40));
 		btnButton_Equals.setBounds(241, 430, 70, 70);
 		contentPane.add(btnButton_Equals);
+		
+		JButton btnButton_Equals = new JButton("=");
+		btnButton_Equals.setForeground(new Color(255, 165, 0));
+		btnButton_Equals.setBackground(Color.GRAY);
+		btnButton_Equals.setFont(new Font("Tahoma", Font.BOLD, 40));
+		btnButton_Equals.setBounds(241, 430, 70, 70);
+		contentPane.add(btnButton_Equals);
 
-		/**
-		 * Khu vuc code nut <=>.
-		 */
+		btnButton_Equals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String text = txtKQ.getText().trim(); 
+					if (text.isEmpty()) {
+						txtKQ.setText("Lỗi nhập liệu");
+						return;
+					}
+
+
+					if (text.contains("+") || text.contains("-") || text.contains("x") || text.contains("/")) {
+						String[] parts = text.split(" ");
+
+
+						if (parts.length == 3) {
+							double firstVal = Double.parseDouble(parts[0]);
+							double secondVal = Double.parseDouble(parts[2]);
+
+
+							switch (parts[1]) {
+							case "+":
+								val = firstVal + secondVal;
+								break;
+							case "-":
+								val = firstVal - secondVal;
+								break;
+							case "x":
+								val = firstVal * secondVal;
+								break;
+							case "/":
+								if (secondVal != 0) {
+									val = firstVal / secondVal;
+								} else {
+									txtKQ.setText("Lỗi chia 0");
+									return;
+								}
+								break;
+							default:
+								txtKQ.setText("Lỗi phép tính");
+								return;
+							}
+							txtKQ.setText(String.valueOf(val));
+						} else {
+							txtKQ.setText("Lỗi phép tính");
+						}
+					} else {
+						txtKQ.setText("Lỗi phép tính");
+					}
+				} catch (Exception ex) {
+					txtKQ.setText("Lỗi nhập liệu"); 
+				}
+			}
+		});
+//		Huy đã thêm nút '='
 
 		txtCasiocaculator = new JTextField();
 		txtCasiocaculator.setHorizontalAlignment(SwingConstants.CENTER);
