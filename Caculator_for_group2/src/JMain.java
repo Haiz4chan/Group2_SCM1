@@ -21,6 +21,7 @@ public class JMain extends JFrame {
 	/**
 	 * Bien du tinh.
 	 */
+	//
 //	boolean kt = true;
 //	boolean dau = false;
 //	double val = 0;
